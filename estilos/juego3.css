@@ -1,0 +1,274 @@
+
+@import url('dashboard.css'); /* Asumiendo que listo.css define las variables :root */
+
+body {
+    font-family: var(--font-main);
+    background-image: url('../imagenes/fondo11.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 80px; /* Espacio para el header fijo */
+}
+
+/* Estilos del Header (copiados de listo.css para consistencia) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 400;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.logo2 img {
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.logo2:hover img {
+    transform: scale(1.2);
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s ease-out;
+}
+
+h1 {
+    font-family: var(--font-title);
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.score-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.word-display {
+    margin-bottom: 2rem;
+}
+
+#word-image-container {
+    width: 100%;
+    height: 180px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#word-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#hint-text {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+#word-blanks {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+#guess-input {
+    width: 80%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#guess-input:focus {
+    border-color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#next-word-button {
+    background-color: var(--success-color);
+}
+#next-word-button:hover {
+    background-color: #3cb0d6;
+}
+
+#return-dashboard-button {
+    background-color: var(--warning-color);
+}
+#return-dashboard-button:hover {
+    background-color: #d91a6d;
+}
+
+#message {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    #hint-text {
+        font-size: 1rem;
+    }
+    #word-blanks {
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
+    }
+    #guess-input, button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    #word-image-container {
+        height: 150px;
+    }
+    #word-blanks {
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+    }
+    #guess-input {
+        width: 90%;
+    }
+    button {
+        width: 90%;
+        margin: 0.5rem auto;
+        display: block;
+    }
+    .score-display {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

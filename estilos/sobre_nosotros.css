@@ -1,0 +1,286 @@
+/* Estilos generales - consistentes con el diseño anterior */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --font-main: 'Rowdies', sans-serif;
+    --font-title: 'Permanent Marker', cursive;
+    --font-fun: 'Dangrek', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header - Manteniendo consistencia */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: static;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 400;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.logo2 img {
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.logo2:hover img {
+    transform: scale(1.2);
+}
+
+/* Main content - ajustado para la página "Sobre Nosotros" */
+main {
+    margin-top: 100px;
+    padding-bottom: 2rem;
+}
+
+/* Secciones informativas con estilo moderno */
+.inform2, .inform3 {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.inform2::before, .inform3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+}
+
+.inform2 h1, .inform3 h1 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.inform2 h1::after, .inform3 h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--warning-color);
+    border-radius: 2px;
+}
+
+.inform2 p, .inform3 p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.inform2 img, .inform3 img {
+    max-width: 300px;
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    shape-outside: circle(50%);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s ease;
+}
+
+.inform2 img:hover, .inform3 img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* Estilo alternado para las secciones */
+.inform3 {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.inform3 h1 {
+    color: var(--secondary-color);
+}
+
+.inform3::before {
+    background: linear-gradient(to bottom, var(--warning-color), #ff6b9c);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Efectos y animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.inform2, .inform3 {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.inform3 {
+    animation-delay: 0.2s;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+    
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .inform2 h1, .inform3 h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .inform2, .inform3 {
+        padding: 2rem 1.5rem;
+    }
+    
+    .inform2 h1, .inform3 h1 {
+        font-size: 2rem;
+    }
+    
+    .inform2 p, .inform3 p {
+        font-size: 1rem;
+    }
+    
+    .inform2 img, .inform3 img {
+        float: none;
+        display: block;
+        margin: 1rem auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    main {
+        margin-top: 140px;
+    }
+    
+    .inform2 h1, .inform3 h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mensajes flash (consistente con el anterior) */
+.flash-messages {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.flash-message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    color: white;
+    animation: slideIn 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
