@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="estilos/iniciosesion.css">
+    
+</head>
+<body>
+    <div class="container-form register">
+        <!-- Lado izquierdo: información -->
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                
+                <p>no tienes cuenta? registrate aqui</p>
+                <a href="registrar.html">
+                    <input type="button" value="registrate" id="sign-in">
+                    
+                </a>
+                 <a href="index.html">
+                    <input type="button" value="volver" id="sign-in">
+                    
+                </a>
+               
+            </div>
+        </div>
+
+        
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>inicia session </h2>
+                <p>Usa tu correo electronico para registrarte</p>
+
+                <form action="php/inicioSesion.php" method="post" id="formRegistro" class="form form-register" novalidate autocomplete="off">
+                    <!-- Nombre de usuario -->
+                    <div>
+                        <label for="identifier">
+                            <i class='bx bx-user'></i>
+                            <input type="text" placeholder="Nombre Usuario" name="identifier" required>
+                        </label>
+                    </div>
+
+                  
+                    
+
+                    <!-- Contraseña -->
+                    <div>
+                        <label for="password">
+                            <i class='bx bx-lock-alt'></i>
+                            <input type="password" placeholder="Contraseña" name="password" required>
+                        </label>
+                    </div>
+
+                    
+
+                    <!-- Botón de envío -->
+                     <button class="btn-auth btn-login" type="submit" >iniciar sesion</button>
+                     
+                    
+
+                    <!-- Alertas -->
+                    <div class="alerta-error" style="display:none; color:red;">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito" style="display:none; color:green;">Te registraste correctamente</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags para PWA -->
+	<meta name="theme-color" content="#B22234">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="PlayfulEnglish">
+	<meta name="description" content="Aprende inglés jugando">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="manifest" href="/manifest.json">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playfullinglish</title>
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="manifest " href="manifest.json">
+</head>
+<body>
+       <header class="header">
+           
+            <div class="logo"><img src="imagenes/logon.png" alt=""></div>
+            
+            <nav class="nav">
+               <a href="index.html">Inicio</a>
+                <a href="sobrenostros.html">Sobre nosotros</a>
+                
+                <a href="ayuda.html">¿Ayuda?</a>
+              
+            </nav>
+           
+            <div class="logo2"><a href=""><img src="imagenes/instagram.png" alt="https://www.instagram.com/playfullenglish?igsh=NmxtZ2I1ZWtuaXpj"></a></div>
+             
+            
+        </header>
+        <br>
+        <br>
+
+        <section class="fondoP">
+            <section class="contenido">
+                <div class="separado1">
+                    <div class="texto-lateral">
+                        <h1>PlayFullEnglish</h1>
+                        <p>Ofrecemos a los usuarios la oportunidad de aprender inglés de una forma didáctica, 
+                        divertida y dinámica. Dejando de lado el método tradicional de enseñanza e 
+                        implementar un nuevo método</p>
+                    
+                        <section class="botRR" id="product">
+                            <a href="inicioSesion.html"><button>¡crea tu cuenta y comienza tu aventura!</button></a>
+                        </section>
+                    </div>
+                
+                    <div class="imagen-lateral">
+                        <img src="imagenes/niñaprincipal.png" alt="">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+   
+   
+    <main>
+
+        <section id="servicios" class="inform">
+            <h1>la importacia del ingles en los niños</h1>
+            <p>En un mundo cada vez más interconectado y globalizado, el aprendizaje del inglés desde la infancia se ha convertido en una herramienta invaluable, una llave maestra que abre un sinfín de puertas y moldea un futuro lleno de posibilidades para nuestros niños.</p>
+            <p>Inculcar el inglés a temprana edad va mucho más allá de simplemente aprender un nuevo idioma. Estimula el desarrollo cognitivo, fortaleciendo la memoria, la capacidad de concentración y las habilidades de resolución de problemas. Los niños expuestos al inglés desde pequeños demuestran una mayor flexibilidad mental y una mejor capacidad para aprender otros idiomas en el futuro.</p>
+            <p>Además, el inglés amplía sus horizontes culturales. Les permite acceder a un universo de información, historias, música y películas en su idioma original, fomentando la comprensión y el respeto por otras culturas. Esta exposición temprana a diferentes perspectivas enriquece su visión del mundo y los convierte en ciudadanos globales más conscientes y empáticos.</p>
+          
+            
+        </section>
+    
+
+        <section id="servicios" class="cards-container">
+            <h2>Quiz rapido
+            </h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Facil</h3>
+                   <a href="juego1.html"> <p><img src="imagenes/WhatsApp Image 2025-03-04 at 4.02.18 PM.jpeg" alt=""></p></a>
+                </div>
+                <div class="card">
+                    <h3> Dificil</h3>
+                   <a href="juego2.html"> <p><img src="imagenes/triste.png" alt=""></p></a>
+                </div>
+                <div class="card">
+                    <h3>Ultra dificil</h3>
+                   <a href="juego3.html"> <p><img src="imagenes/enojado.png" alt=""></p></a>
+                    
+                </div>
+            </div>
+			
+
+			<section id="acerca" class="about-section">
+				<h2>Acerca de Nosotros</h2>
+               
+				<p> En la era digital actual, las herramientas educativas en línea han revolucionado la forma en que adquirimos conocimientos. Entre ellas, las páginas web que combinan juegos y aprendizaje de idiomas, como el inglés, destacan por su capacidad para motivar y enganchar a los estudiantes. Una página web diseñada con este enfoque puede desempeñar múltiples funciones cruciales para el aprendizaje efectivo del inglés.</p>
+			</section>
+            <section class="product" id="product">
+                <a href="sobrenostros.html"><button>conoce mas sobre nosotros</button></a>
+                </section>
+    
+
+        </section>
+        
+
+        
+       <!-- Contenedor para mensajes flash -->
+       <div id="flash-messages" class="flash-messages"></div>
+       
+
+    </main>
+
+
+    <footer> <a href="Playfullenglish@gmail.com"> <p>&copy; correo:   Playfullenglish@gmail.com</p></a>
+        <p>&copy; 2025.</p>
+    </footer>
+    
+    
+    <script>
+	if ('serviceWorker' in navigator) {
+  	window.addEventListener('load', () => {
+    	navigator.serviceWorker.register('/service-worker.js')
+      	.then(reg => console.log('Service Worker registrado'))
+      	.catch(err => console.log('Error:', err));
+  	});
+	}
+	</script>
+    <script src="app.js"></script>
+</body>
+</html>

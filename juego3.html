@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la Palabra - PlayFullEnglish</title>
+    <link rel="stylesheet" href="estilos/juego3.css">
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+           
+             <div class="logo"><img src="imagenes/logon.png" alt=""></div>
+            
+            <nav class="nav">
+               <a href="index.html">Inicio</a>
+                <a href="sobrenostros.html">Sobre nosotros</a>
+                
+                <a href="ayuda.html">¿Ayuda?</a>
+              
+            </nav>
+            <div class="logo2"><a href=""><img src="imagenes/facebook.png" alt=""></a></div>
+            <div class="logo2"><a href=""><img src="imagenes/instagram.png" alt="https://www.instagram.com/playfullenglish?igsh=NmxtZ2I1ZWtuaXpjhttps://www.instagram.com/playfullenglish?igsh=NmxtZ2I1ZWtuaXpj"></a></div>
+            
+        </header>
+        <br>
+        <br>
+    <div class="background-image"></div>
+    
+    <div id="game-screen" class="screen active">
+        <div class="container">
+            <h1>Adivina la Palabra</h1>
+            <div class="score-display">
+                <span>Puntos: <span id="score">0</span></span>
+            </div>
+            
+            <div class="word-display">
+                <div id="word-image-container">
+                    <!-- La imagen se cargará dinámicamente -->
+                </div>
+                <p id="hint-text"></p>
+                <div id="word-blanks"></div>
+            </div>
+            
+            <input type="text" id="guess-input" placeholder="Escribe tu respuesta en inglés" maxlength="15">
+            <button id="check-button">Comprobar</button>
+            <button id="next-word-button" class="hide">Siguiente Palabra</button>
+            <button id="return-dashboard-button" class="btn-secondary">Volver al Dashboard</button>
+
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <script src="js/juego3.js"></script>
+</body>
+</html>

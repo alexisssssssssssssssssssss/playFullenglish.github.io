@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayFullEnglish</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="estilos/juego1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+           
+             <div class="logo"><img src="imagenes/logon.png" alt=""></div>
+            
+            <nav class="nav">
+               <a href="index.html">Inicio</a>
+                <a href="sobrenostros.html">Sobre nosotros</a>
+                
+                <a href="ayuda.html">¿Ayuda?</a>
+              
+            </nav>
+            <div class="logo2"><a href=""><img src="imagenes/facebook.png" alt=""></a></div>
+            <div class="logo2"><a href=""><img src="imagenes/instagram.png" alt="https://www.instagram.com/playfullenglish?igsh=NmxtZ2I1ZWtuaXpj"></a></div>
+            
+        </header>
+        <br>
+        <br>
+    <div class="background-image"></div>
+    
+    <!-- Pantalla de Bienvenida -->
+    <div id="welcome-screen" class="screen active">
+        <div class="container">
+            <h1>Bienvenido!!</h1>
+            <p>Ingresa tu nombre para jugar</p>
+            <input type="text" id="player-name" placeholder="Tu nombre">
+            <button id="start-game">COMENZAR</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Selección de Categoría -->
+    <div id="category-screen" class="screen">
+        <div class="container">
+            <div class="score-display">
+                <span>Puntos: <span id="total-score">0</span></span>
+            </div>
+            <h1>PlayFullEnglish</h1>
+            <h2 id="greeting">Hola Jugador</h2>
+            <p>Elige una categoría.</p>
+            
+            <div class="categories-grid">
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="imagenes/1.jpeg" alt="Animales" class="category-image">
+                    </div>
+                    <div class="category" data-category="animals">
+                        <span>general</span>
+                        <small>(general)</small>
+                        <div class="category-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="imagenes/2.jpeg" alt="Frutas" class="category-image">
+                    </div>
+                    <div class="category" data-category="fruits">
+                        <span>general</span>
+                        <small>(general)</small>
+                        <div class="category-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="imagenes/3.jpeg" alt="Deportes" class="category-image">
+                    </div>
+                    <div class="category" data-category="sports">
+                        <span>general</span>
+                        <small>(general)</small>
+                        <div class="category-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="imagenes/4.jpeg" alt="Juegos" class="category-image">
+                    </div>
+                    <div class="category" data-category="games">
+                        <span>general</span>
+                        <small>(general)</small>
+                        <div class="category-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="imagenes/5.jpeg" alt="Ciencia" class="category-image">
+                    </div>
+                    <div class="category" data-category="science">
+                        <span>general</span>
+                        <small>(general)</small>
+                        <div class="category-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="category-container">
+                    <div class="category-image-container">
+                        <img src="imagenes/6.jpeg" alt="Historia" class="category-image">
+                    </div>
+                    <div class="category" data-category="history">
+                        <span>general</span>
+                        <small>(genral)</small>
+                        <div class="category-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Pregunta -->
+    <div id="question-screen" class="screen">
+        <div class="container">
+            <div class="score-display">
+                <span>Puntos: <span id="current-score">0</span></span>
+                <button id="change-category" class="small-button">Cambiar categoría</button>
+            </div>
+            
+            
+            <div class="question-container">
+                <div id="question-image-container">
+                    <!-- La imagen se cargará dinámicamente -->
+                </div>
+                <h2 id="question-text">¿Cuál es el planeta más grande de nuestro sistema solar?</h2>
+                
+                <div class="options-container">
+                    <div class="option">Tierra</div>
+                    <div class="option">Marte</div>
+                    <div class="option">Júpiter</div>
+                    <div class="option">Venus</div>
+                </div>
+            </div>
+            
+            <button id="next-question">SIGUIENTE</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de Resultados Finales -->
+    <div id="results-screen" class="screen">
+        <div class="container">
+            <h1>¡Juego Completado!</h1>
+            <h2 id="final-greeting">Felicidades, Jugador</h2>
+            
+            <div class="results-stats">
+                <div class="stat-box">
+                    <div class="stat-value" id="final-score">0</div>
+                    <div class="stat-label">Puntos Totales</div>
+                </div>
+                
+                <div class="stat-box correct">
+                    <div class="stat-value" id="correct-answers">0</div>
+                    <div class="stat-label">Correctas</div>
+                </div>
+                
+                <div class="stat-box incorrect">
+                    <div class="stat-value" id="incorrect-answers">0</div>
+                    <div class="stat-label">Incorrectas</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-value" id="success-rate">0%</div>
+                    <div class="stat-label">Porcentaje</div>
+                </div>
+            </div>
+            
+            <div class="results-actions">
+                <button id="play-again">Jugar de Nuevo</button>
+                <button id="return-home">Volver al Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/juego1.js"></script>
+</body>
+</html>

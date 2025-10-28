@@ -1,0 +1,27 @@
+# Archivo .htaccess para tu sitio en InfinityFree
+# Coloca este archivo en la carpeta htdocs/
+
+# Definir el archivo de inicio predeterminado
+DirectoryIndex index.html index.php
+
+# Habilitar la reescritura de URLs (si usas rutas amigables)
+RewriteEngine On
+
+# Página de error personalizada (opcional)
+# ErrorDocument 404 /404.html
+
+# Proteger archivos sensibles
+<FilesMatch "^(config\.php|\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Forzar HTTPS (opcional, descomenta si quieres forzar conexión segura)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Configuración de codificación
+AddDefaultCharset UTF-8
